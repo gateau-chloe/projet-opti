@@ -16,12 +16,19 @@ public class Sac {
     public int getTaille() {
         return taille;
     }
-    public void addObjet(Obj objet){
+
+    public int getUtilite(){
+        return utilite;
+    }
+    public boolean addObjet(Obj objet){
+        boolean dansLeSac = false;
         if (espaceLibre> objet.getPoid()) {
             listObjet.add(objet);
+            dansLeSac = true;
             espaceLibre = espaceLibre - objet.getPoid();
             utilite = utilite + objet.getUtilite();
         }
+        return dansLeSac;
     }
 
     public int getEspaceLibre() {

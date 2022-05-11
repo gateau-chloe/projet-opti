@@ -45,8 +45,8 @@ public class Algotithme {
                 for (int j = 0; j < sac2.getTaille(); j++) {
                     if(tailleObjetK <= placeLibre1 && tailleObjetK <= placeLibre1){
                        valeurMax = max(utiliteObjetK + cube[i-tailleObjetK][j][k+1],utiliteObjetK + cube[i][j-tailleObjetK][k+1]);
-// max de l'utilité + valeur pour l'objet presedent dans sac 1
-         // utilité + valeur pour l'objet presedent dans sac 2
+            // max de l'utilité + valeur pour l'objet presedent dans sac 1
+            // utilité + valeur pour l'objet presedent dans sac 2
 
 
                     }

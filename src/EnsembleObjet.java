@@ -28,21 +28,19 @@ public class EnsembleObjet {
     // trie des deux tableau
     public void triUtilite()
     {
-
-            for (int i = 0; i < tableau.size() - 1; i++)
+        for (int i = 0; i < tableau.size() - 1; i++)
+        {
+            int p = i;
+            for (int j = i + 1; j < tableau.size(); j++)
             {
-                int p = i;
-                for (int j = i + 1; j < tableau.size(); j++)
-                {
-                    if (tableau.get(j).getRapportPoidUtilite() < tableau.get(p).getRapportPoidUtilite()){
-                        p= j;
-                    }
+                if (tableau.get(j).getRapportPoidUtilite() < tableau.get(p).getRapportPoidUtilite()){
+                    p= j;
                 }
-
-                Obj min = tableau.get(p);
-                tableau.set(p,tableau.get(i));
-                tableau.set(i,min);
             }
+            Obj min = tableau.get(p);
+            tableau.set(p,tableau.get(i));
+            tableau.set(i,min);
+        }
 
     }
 

@@ -1,0 +1,52 @@
+import java.util.ArrayList;
+
+public class AlgoPerso {
+
+    Sac sac1, sac2;
+    EnsembleObjet listeObjet;
+
+
+    public AlgoPerso(Sac sac1, Sac sac2) {
+        this.sac1 = sac1;
+        this.sac2 = sac2;
+        this.listeObjet = null;
+    }
+
+    //intervertir les deux sac test 1 puis l'autre
+    public ArrayList<Sac> remplissageSac(Sac sac1, Sac sac2){
+        listeObjet.triUtilite();
+        EnsembleObjet trie = listeObjet;
+        int iemeObjet = 0;
+        ArrayList<Sac> listeSac = null;
+        while ((sac1.getEspaceLibre() != 0 && iemeObjet != trie.getNbObjet()) || (sac2.getEspaceLibre() != 0)) {
+            Obj obj = trie.getTableau().get(iemeObjet);
+            boolean estDansSac = sac1.addObjet(obj);
+            iemeObjet++;
+            if(estDansSac == false){
+                sac2.addObjet(obj);
+            }
+        }
+        listeSac.add(sac1);
+        listeSac.add(sac2);
+        return listeSac;
+    }
+
+    public ArrayList<Sac> getAllSac(){
+        ArrayList<Sac> listeSac1 = remplissageSac(sac1, sac2);
+        ArrayList<Sac> listeSac2 = remplissageSac(sac1, sac2);
+        int utilite1 = 0, utilite2 = 0;
+
+        for(int i=0; i <= listeSac1.size(); i++){
+            utilite1 = utilite1 + listeSac1.get(i).getUtilite();
+        }
+
+        for(int i=0; i <= listeSac2.size(); i++){
+            utilite2 = utilite2 + listeSac2.get(i).getUtilite();
+        }
+
+        if (utilite1 > utilite2){
+            return listeSac1;
+        }
+        return listeSac2;
+    }
+}
