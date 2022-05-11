@@ -5,6 +5,7 @@ public class EnsembleObjet {
     private int nbObjet;
     private ArrayList<Obj> tableau;
 
+
     public EnsembleObjet(int nbObjet){
         this.nbObjet=nbObjet;
         this.tableau=new ArrayList<>();
@@ -20,6 +21,29 @@ public class EnsembleObjet {
 
     public void addObjet(Obj objet){
            tableau.add(objet);
+    }
+
+
+
+    // trie des deux tableau
+    public void triUtilite()
+    {
+
+            for (int i = 0; i < tableau.size() - 1; i++)
+            {
+                int p = i;
+                for (int j = i + 1; j < tableau.size(); j++)
+                {
+                    if (tableau.get(j).getRapportPoidUtilite() < tableau.get(p).getRapportPoidUtilite()){
+                        p= j;
+                    }
+                }
+
+                Obj min = tableau.get(p);
+                tableau.set(p,tableau.get(i));
+                tableau.set(i,min);
+            }
+
     }
 
     public void affiche(){
