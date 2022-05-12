@@ -30,7 +30,21 @@ public class Sac {
         }
         return dansLeSac;
     }
-
+    public boolean addObjetDecoupe(Obj objet){
+        boolean dansLeSac = false;
+        if (espaceLibre> objet.getPoid()) {
+            listObjet.add(objet);
+            dansLeSac = true;
+            espaceLibre = espaceLibre - objet.getPoid();
+            utilite = utilite + objet.getUtilite();
+        }
+        else{
+            listObjet.add(new Obj(objet.getPoid()/espaceLibre,objet.getUtilite()/espaceLibre));
+            utilite = utilite + objet.getUtilite()/espaceLibre;
+            espaceLibre = 0;
+        }
+        return dansLeSac;
+    }
     public int getEspaceLibre() {
         return espaceLibre;
     }

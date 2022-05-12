@@ -7,7 +7,7 @@ public class algoBorne {
     public Sac fusionSac(){
         return new Sac(sac1.getTaille()+ sac2.getTaille());
     }
-    public void born2() {
+    public void borne() {
         //a remplacer par le retour de la fonction de trie dans Ensemble objet
         listeObjet.triUtilite();
         EnsembleObjet trie = listeObjet;
@@ -16,7 +16,7 @@ public class algoBorne {
         int iemeObjet = 0;
         while (sac.getEspaceLibre() != 0 && iemeObjet != trie.getNbObjet()) {
             Obj obj = trie.getTableau().get(iemeObjet);
-            sac.addObjet(obj);
+            sac.addObjetDecoupe(obj);
             iemeObjet++;
         }
 

@@ -1,14 +1,11 @@
-import java.util.ArrayList;
-import java.util.Optional;
-
-public class Algotithme {
+public class AlgotithmeOptimal {
 
     private EnsembleObjet objets;
     private Sac sac1;
     private Sac sac2;
 
 
-    public Algotithme(EnsembleObjet objets, Sac sac1, Sac sac2) {
+    public AlgotithmeOptimal(EnsembleObjet objets, Sac sac1, Sac sac2) {
         this.objets = objets;
         this.sac1 = sac1;
         this.sac2 = sac2;
