@@ -20,10 +20,10 @@ public class AlgotithmeOptimal {
             for (int j = 0; j <= sac2.getTaille(); j++) {
                 Obj obj = objets.getTableau().get(objets.getNbObjet()-1);
                 if ((obj.getPoid() <= i) || (obj.getPoid() <= j)) {
-                    cube[i][j][objets.getNbObjet()] = obj.getUtilite();
+                    cube[i][j][objets.getNbObjet()-1] = obj.getUtilite();
 
                 } else {
-                    cube[i][j][objets.getNbObjet()] = 0;
+                    cube[i][j][objets.getNbObjet()-1] = 0;
                 }
             }
         }
@@ -37,10 +37,10 @@ public class AlgotithmeOptimal {
             for (int i = 0; i <= sac1.getTaille(); i++) {
                 for (int j = 0; j <= sac2.getTaille(); j++) {
                     int valeurMax=cube[i][j][k+1];
-                    if (i>=objets.getTableau().get(k-1).getPoid()){
+                    if (i>=objets.getTableau().get(k).getPoid()){
                         valeurMax = max(valeurMax,utiliteObjetK + cube[i-tailleObjetK][j][k+1] );
                     }
-                    if (j>=objets.getTableau().get(k-1).getPoid()){
+                    if (j>=objets.getTableau().get(k).getPoid()){
                         valeurMax = max(valeurMax,utiliteObjetK + cube[i][j-tailleObjetK][k+1] );
                     }
                     cube[i][j][k]= valeurMax;
