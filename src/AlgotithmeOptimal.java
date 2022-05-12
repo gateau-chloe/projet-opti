@@ -51,7 +51,7 @@ public class AlgotithmeOptimal {
     }
 
     private int utiliteOptimal(int[][][] cube){
-        int utilite= cube[0][0][0];
+        int utilite= cube[sac1.getTaille()][sac2.getTaille()][0];
         return utilite;
     }
 
