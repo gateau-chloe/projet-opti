@@ -32,7 +32,7 @@ public class Sac {
     }
     public boolean addObjetDecoupe(Obj objet){
         boolean dansLeSac = false;
-        if (espaceLibre> objet.getPoid()) {
+        if (espaceLibre>= objet.getPoid()) {
             listObjet.add(objet);
             dansLeSac = true;
             espaceLibre = espaceLibre - objet.getPoid();

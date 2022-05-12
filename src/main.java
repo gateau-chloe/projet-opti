@@ -56,12 +56,12 @@ public class main {
         int utilitePerso = algoP.getAllSac();
         System.out.print("utilite pour l'algo perso: ");
         System.out.println(utilitePerso);
-/*
+
         algoBorne algoB = new algoBorne(sac1,sac2,tableObjet);
         int utiliteBorne =algoB.borne();
         System.out.print("utilite pour l'algo de born: ");
         System.out.println(utiliteBorne);
-
+/*
         AlgotithmeOptimal algoO =  new AlgotithmeOptimal(tableObjet,sac1,sac2);
         int utiliteOpti = algoO.run();
         System.out.print("utilite pour l'algo de optimal: ");
