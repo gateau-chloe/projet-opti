@@ -19,6 +19,14 @@ public class main {
 
         Sac sac1 = new Sac(i);
         Sac sac2 = new Sac(j);
+        System.out.println("taille sac 1 :");
+        System.out.println(sac1.getTaille());
+
+        System.out.println("taille sac 2 :");
+        System.out.println(sac2.getTaille());
+
+
+
 
         // creation du tableau d'objet
         System.out.println("Combien d'objet disposez vous?");
@@ -41,6 +49,8 @@ public class main {
             tableObjet.addObjet(obj);
         }
         tableObjet.affiche();
+        System.out.println("nb objet  :");
+        System.out.println(tableObjet.getNbObjet());
 
         AlgoPerso algoP = new AlgoPerso(sac1,sac2,tableObjet);
         int utilitePerso = algoP.getAllSac();

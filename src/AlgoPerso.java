@@ -17,21 +17,15 @@ public class AlgoPerso {
         listeObjet.triUtilite();
         EnsembleObjet trie = listeObjet;
         int iemeObjet = 0;
-        ArrayList<Sac> listeSac = null;
+        ArrayList<Sac> listeSac = new ArrayList<>();
         do{
-            System.out.print("ième objet: ");
-            System.out.println(iemeObjet);
-            System.out.print("nbobjet: ");
-            System.out.println(trie.getNbObjet()-1);
-
-
             Obj obj = trie.getTableau().get(iemeObjet);
             boolean estDansSac = sac1.addObjet(obj);
             iemeObjet++;
             if(estDansSac == false){
                 sac2.addObjet(obj);
             }
-        }while ((sac1.getEspaceLibre() != 0 && iemeObjet != trie.getNbObjet()-1 ) || (sac2.getEspaceLibre() != 0));
+        }while ((sac1.getEspaceLibre() != 0 || sac2.getEspaceLibre() != 0) && ( iemeObjet != trie.getNbObjet()-1 ));
 
         listeSac.add(sac1);
         listeSac.add(sac2);
@@ -43,11 +37,11 @@ public class AlgoPerso {
         ArrayList<Sac> listeSac2 = remplissageSac(sac1, sac2);
         int utilite1 = 0, utilite2 = 0;
 
-        for(int i=0; i <= listeSac1.size(); i++){
+        for(int i=0; i < listeSac1.size(); i++){
             utilite1 = utilite1 + listeSac1.get(i).getUtilite();
         }
 
-        for(int i=0; i <= listeSac2.size(); i++){
+        for(int i=0; i < listeSac2.size(); i++){
             utilite2 = utilite2 + listeSac2.get(i).getUtilite();
         }
 
