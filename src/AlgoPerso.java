@@ -6,10 +6,10 @@ public class AlgoPerso {
     EnsembleObjet listeObjet;
 
 
-    public AlgoPerso(Sac sac1, Sac sac2) {
+    public AlgoPerso(Sac sac1, Sac sac2,EnsembleObjet listeObjet) {
         this.sac1 = sac1;
         this.sac2 = sac2;
-        this.listeObjet = null;
+        this.listeObjet = listeObjet;
     }
 
     //intervertir les deux sac test 1 puis l'autre
@@ -18,20 +18,27 @@ public class AlgoPerso {
         EnsembleObjet trie = listeObjet;
         int iemeObjet = 0;
         ArrayList<Sac> listeSac = null;
-        while ((sac1.getEspaceLibre() != 0 && iemeObjet != trie.getNbObjet()) || (sac2.getEspaceLibre() != 0)) {
+        do{
+            System.out.print("ième objet: ");
+            System.out.println(iemeObjet);
+            System.out.print("nbobjet: ");
+            System.out.println(trie.getNbObjet()-1);
+
+
             Obj obj = trie.getTableau().get(iemeObjet);
             boolean estDansSac = sac1.addObjet(obj);
             iemeObjet++;
             if(estDansSac == false){
                 sac2.addObjet(obj);
             }
-        }
+        }while ((sac1.getEspaceLibre() != 0 && iemeObjet != trie.getNbObjet()-1 ) || (sac2.getEspaceLibre() != 0));
+
         listeSac.add(sac1);
         listeSac.add(sac2);
         return listeSac;
     }
 
-    public ArrayList<Sac> getAllSac(){
+    public int getAllSac(){
         ArrayList<Sac> listeSac1 = remplissageSac(sac1, sac2);
         ArrayList<Sac> listeSac2 = remplissageSac(sac1, sac2);
         int utilite1 = 0, utilite2 = 0;
@@ -45,8 +52,8 @@ public class AlgoPerso {
         }
 
         if (utilite1 > utilite2){
-            return listeSac1;
+            return utilite1;
         }
-        return listeSac2;
+        return utilite2;
     }
 }

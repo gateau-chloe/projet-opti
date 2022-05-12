@@ -3,11 +3,16 @@ public class algoBorne {
     private Sac sac1;
     private Sac sac2;
 
+    public algoBorne(Sac sac1, Sac sac2, EnsembleObjet listeObjet){
+        this.sac1 = sac1;
+        this.sac2 =sac2;
+        this.listeObjet =listeObjet;
+    }
     //on creer un nouveau sac à partir du 1 et 2
     public Sac fusionSac(){
         return new Sac(sac1.getTaille()+ sac2.getTaille());
     }
-    public void borne() {
+    public int borne() {
         //a remplacer par le retour de la fonction de trie dans Ensemble objet
         listeObjet.triUtilite();
         EnsembleObjet trie = listeObjet;
@@ -19,6 +24,6 @@ public class algoBorne {
             sac.addObjetDecoupe(obj);
             iemeObjet++;
         }
-
+        return sac.getUtilite();
     }
 }
