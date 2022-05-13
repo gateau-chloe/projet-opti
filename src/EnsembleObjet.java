@@ -55,12 +55,16 @@ public class EnsembleObjet {
         for (int i=0; i<nbObjet; i++){
             Obj obj =tableau.get(i);
             System.out.print(obj.getPoid());
+            System.out.print(",");
+
         }
         System.out.println("----------------------");
         System.out.print("wi");
         for (int i=0; i<nbObjet; i++){
             Obj obj =tableau.get(i);
             System.out.print(obj.getUtilite());
+            System.out.print(",");
+
         }
 
     }

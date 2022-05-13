@@ -10,15 +10,18 @@ public class main {
 
 
         // Création des 2 sac
-        System.out.println("Taille du sac 1");
+      /*System.out.println("Taille du sac 1");
         Scanner TailleSac1 = new Scanner(System.in);
         int i = TailleSac1.nextInt();
         System.out.println("Taille du sac 2");
         Scanner TailleSac2 = new Scanner(System.in);
         int j = TailleSac2.nextInt();
+*/
 
-        Sac sac1 = new Sac(i);
-        Sac sac2 = new Sac(j);
+        creationAleatoire creat = new creationAleatoire(5,10,30,1,10,1);
+
+        Sac sac1 = creat.creatSac();
+        Sac sac2 = creat.creatSac();
         System.out.println("taille sac 1 :");
         System.out.println(sac1.getTaille());
 
@@ -27,9 +30,8 @@ public class main {
 
 
 
-
         // creation du tableau d'objet
-        System.out.println("Combien d'objet disposez vous?");
+       /*tem.out.println("Combien d'objet disposez vous?");
         Scanner nbObjet = new Scanner(System.in);
         EnsembleObjet tableObjet =new EnsembleObjet( nbObjet.nextInt());
 
@@ -47,7 +49,8 @@ public class main {
             System.out.println(utilite);
             Obj obj =new Obj(poid, utilite);
             tableObjet.addObjet(obj);
-        }
+        }*/
+        EnsembleObjet tableObjet = creat.creatEnsembleObjet(15);
         tableObjet.affiche();
         System.out.println("nb objet  :");
         System.out.println(tableObjet.getNbObjet());
