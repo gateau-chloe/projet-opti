@@ -33,13 +33,13 @@ public class EnsembleObjet {
             int p = i;
             for (int j = i + 1; j < tableau.size(); j++)
             {
-                if (tableau.get(j).getRapportPoidUtilite() < tableau.get(p).getRapportPoidUtilite()){
+                if (tableau.get(j).getRapportUtilitePoid() > tableau.get(p).getRapportUtilitePoid()){
                     p= j;
                 }
             }
-            Obj min = tableau.get(p);
+            Obj max = tableau.get(p);
             tableau.set(p,tableau.get(i));
-            tableau.set(i,min);
+            tableau.set(i,max);
         }
 
     }

@@ -2,13 +2,13 @@ public class Obj {
 
     private int poid;
     private int utilite;
-    private int rapportPoidUtilite;
+    private float rapportPoidUtilite;
 
 
     public Obj(int poid, int utilite){
         this.poid=poid;
         this.utilite=utilite;
-        this.rapportPoidUtilite= poid/utilite;
+        this.rapportPoidUtilite= utilite/poid;
     }
 
     public int getPoid() {
@@ -19,7 +19,7 @@ public class Obj {
         return utilite;
     }
 
-    public int getRapportPoidUtilite() {
+    public float getRapportUtilitePoid() {
         return rapportPoidUtilite;
     }
 }

@@ -15,6 +15,7 @@ public class algoBorne {
     public int borne() {
         //a remplacer par le retour de la fonction de trie dans Ensemble objet
         listeObjet.triUtilite();
+        //listeObjet.affiche();
         EnsembleObjet trie = listeObjet;
         // a remplacer par le fonction qui addition les 2 sacs
         Sac sac = fusionSac();

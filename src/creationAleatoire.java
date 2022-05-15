@@ -18,6 +18,10 @@ public class creationAleatoire {
 
 
         public Sac creatSac(){
+        System.out.print("teaille max du sac");
+        System.out.println(maxTailleSac);
+            System.out.print("teaille min du sac");
+            System.out.println(minTailleSac);
             int nombreAleatoire = minTailleSac + (int)(Math.random() * ((maxTailleSac - minTailleSac) + 1));
             Sac sac = new Sac(nombreAleatoire);
             return sac;

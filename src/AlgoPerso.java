@@ -16,6 +16,7 @@ public class AlgoPerso {
     public ArrayList<Sac> remplissageSac(Sac sac1, Sac sac2){
         listeObjet.triUtilite();
         EnsembleObjet trie = listeObjet;
+        //trie.affiche();
         int iemeObjet = 0;
         ArrayList<Sac> listeSac = new ArrayList<>();
         do{
@@ -34,8 +35,9 @@ public class AlgoPerso {
 
     public int getAllSac(){
         ArrayList<Sac> listeSac1 = remplissageSac(sac1, sac2);
-        ArrayList<Sac> listeSac2 = remplissageSac(sac1, sac2);
+        ArrayList<Sac> listeSac2 = remplissageSac(sac1.viderSac(), sac2.viderSac());
         int utilite1 = 0, utilite2 = 0;
+
 
         for(int i=0; i < listeSac1.size(); i++){
             utilite1 = utilite1 + listeSac1.get(i).getUtilite();

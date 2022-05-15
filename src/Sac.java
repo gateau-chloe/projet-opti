@@ -22,7 +22,7 @@ public class Sac {
     }
     public boolean addObjet(Obj objet){
         boolean dansLeSac = false;
-        if (espaceLibre> objet.getPoid()) {
+        if (espaceLibre>= objet.getPoid()) {
             listObjet.add(objet);
             dansLeSac = true;
             espaceLibre = espaceLibre - objet.getPoid();
@@ -39,14 +39,17 @@ public class Sac {
             utilite = utilite + objet.getUtilite();
         }
         else{
-            listObjet.add(new Obj(objet.getPoid()/espaceLibre,objet.getUtilite()/espaceLibre));
-            utilite = utilite + objet.getUtilite()/espaceLibre;
+            listObjet.add(new Obj((objet.getPoid()*espaceLibre)/ objet.getPoid(),(objet.getUtilite()*espaceLibre)/ objet.getPoid()));
+            utilite = utilite + (objet.getUtilite()*espaceLibre)/ objet.getPoid();
             espaceLibre = 0;
         }
         return dansLeSac;
     }
     public int getEspaceLibre() {
         return espaceLibre;
+    }
+    public Sac viderSac(){
+        return new Sac(taille);
     }
 
 
